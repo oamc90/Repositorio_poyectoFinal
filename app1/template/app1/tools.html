@@ -1,0 +1,26 @@
+{% extends "app1/master.html" %}
+
+{% load static %}
+
+{% block titulo %}
+
+<h1>Inventario de herramientas</h1>
+
+
+{% endblock %}
+
+{% block contenidoquecambia %}
+
+<h1>Ingrese la informacion sobre la herramienta/material</h1>
+
+<form action="{% url 'tools' %}" method="POST">{% csrf_token %}
+
+    <table>
+
+      {{formulario.as_table}}
+
+    </table>
+
+    <input type="submit" value="Enviar">
+</form>
+{% endblock %}

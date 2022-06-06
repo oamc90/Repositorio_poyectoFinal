@@ -1,0 +1,27 @@
+{% extends "app1/master.html" %}
+
+{% load static %}
+
+{% block titulo %}
+
+<h1>Ingenieros</h1>
+
+
+{% endblock %}
+
+{% block contenidoquecambia %}
+
+<h1>Pagina para los datos de los ingenieros</h1>
+
+<form action="{% url 'buscar' %}" method="GET">
+  <input type="text" name="nombre" id="nombre">
+
+  <input type="submit" value="Enviar/Buscar">
+
+
+
+
+</form>
+
+
+{% endblock %}

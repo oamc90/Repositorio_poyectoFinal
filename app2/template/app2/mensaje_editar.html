@@ -1,0 +1,27 @@
+{% extends "app1/master.html" %}
+
+{% load static %}
+
+
+
+{% block titulo %}
+
+    <h2 > Edicion de mensaje</h2>
+
+{% endblock %}
+
+
+{% block contenidoquecambia %}
+
+
+<form action="{% url 'mensaje_editar' id %}" method="post">{% csrf_token %}
+
+    <table>
+        {{ formulario.as_table}}
+    </table>
+
+    <input type="submit" value="Modificar / Editar mensaje">
+
+</form>
+
+{% endblock %}

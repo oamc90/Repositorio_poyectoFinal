@@ -1,0 +1,26 @@
+{% extends "app1/master.html" %}
+
+{% load static %}
+
+{% block titulo %}
+
+<h1>Edicion de usuario</h1>
+
+
+{% endblock %}
+
+{% block contenidoquecambia %}
+
+<h1> Editar/Modificar el usuario {{usuario}}</h1>
+
+<form action="{% url 'editarUsuario' %}" method="POST">{% csrf_token %}
+
+    <table>
+
+      {{formulario.as_table}}
+
+    </table>
+
+    <input type="submit" value="Editar/Modificar ">
+</form>
+{% endblock %}

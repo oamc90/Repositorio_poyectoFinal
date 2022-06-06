@@ -1,0 +1,39 @@
+{% extends "app1/master.html" %}
+
+{% load static %}
+
+{% block titulo %}
+
+<h3> Mensajeria a usuarios</h3>
+
+{% for usuario in usuario %}
+
+    <li>
+            <!-- Main Content-->
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <!-- Post preview-->
+                        <div class="post-preview">
+                            
+                                <h4 class="btn btn-primary btn-lg"> "{{ usuario }}"" </h4>
+                            </a>
+                            <p class="post-meta">
+                                <a href="#!"></a>
+
+                                
+                                
+
+                                    {% if request.user.is_authenticated %}
+                                    <button>
+                                        <a href= "{% url 'mensaje_crear'  %}" > Enviar mensaje </a>
+                                    </button>
+
+                                    {% endif %}
+    </li>
+
+{% endfor %}
+<button>
+    <a href= "{% url 'mensaje_listar' %}" > Lista de mensajes </a>
+</button>
+{% endblock %}

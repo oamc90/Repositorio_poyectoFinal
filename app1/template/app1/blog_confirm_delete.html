@@ -1,0 +1,19 @@
+{% extends "app1/master.html" %}
+
+{% load static %}
+
+{% block titulo %}
+
+<h1> Bienvenido </h1>
+
+{% endblock %}
+
+{% block contenidoquecambia %}
+
+<form  method="POST">{% csrf_token %}
+    estas seguro que desea borrar el blog "{{ object }}"" ?
+    <input type="submit" value="Borrar/Eliminar">
+</form>
+
+
+{% endblock %}

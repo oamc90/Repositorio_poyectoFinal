@@ -1,0 +1,26 @@
+{% extends "app1/master.html" %}
+
+{% load static %}
+
+{% block titulo %}
+
+<h1> {{ mensaje.receptor }} </h1>
+
+{% endblock %}
+
+{% block subtitulo %}
+
+ 
+
+{% endblock %}
+
+
+{% block cuerpo %}
+{{ mensaje.contenido|safe }}
+
+<p> Fecha de creacion : <i>{{ mensaje.fecha_envio }}</i> </p>
+
+<p>
+<a href= "{% url 'mensaje_listar' %}" > Regresar </a>
+</p>
+{% endblock %}

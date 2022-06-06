@@ -1,0 +1,31 @@
+{% extends "app1/master.html" %}
+
+{% load static %}
+
+{% block titulo %}
+
+<h1> {{ blog.titulo }} </h1>
+
+{% endblock %}
+
+{% block subtitulo %}
+
+ {{ blog.subtitulo }}
+
+{% endblock %}
+
+
+{% block cuerpo %}
+{{ blog.cuerpo|safe }}
+
+<img src="{{ url }}" alt=""/>
+
+{{ blog.imagen }}
+
+<p> Autor : <i>{{ blog.creador }}</i> </p>
+<p> Fecha de creacion : <i>{{ blog.fecha_creacion }}</i> </p>
+
+<p>
+<a href= "{% url 'blog_listar' %}" > Regresar </a>
+</p>
+{% endblock %}

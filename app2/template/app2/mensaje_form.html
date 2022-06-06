@@ -1,0 +1,21 @@
+{% extends "app1/master.html" %}
+
+{% load static %}
+
+{% block titulo %}
+
+<h2> Creacion / Edicion de mensaje </h2>
+
+{% endblock %}
+
+{% block contenidoquecambia %}
+
+<form  method="POST">{% csrf_token %}
+    
+    {{form.media}}
+    {{formulario.as_p}}
+
+   <input type="submit" value="Enviar mensaje">
+</form>
+
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends "app1/master.html" %}
+
+{% load static %}
+
+{% block titulo %}
+
+<h2> Perfil del usuario : "{{user.username}}" </h2>
+
+<img src="{{ url }}" alt=""/>
+
+
+{% endblock %}
+
+{% block contenidoquecambia %}
+
+<button>
+    <a href= "{% url 'editarUsuario' %}" > Editar usuario</a>
+</button>
+<button>
+    <a href= "{% url 'agregarAvatar' %}" > Agregar/Editar avatar</a>
+</button>
+<button>
+    <a href= "{% url 'eliminarPerfil' %}" > Eliminar usuario</a>
+</button>
+{% endblock %}

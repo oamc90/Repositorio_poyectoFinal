@@ -1,0 +1,32 @@
+{% extends "app1/master.html" %}
+
+{% load static %}
+
+{% block titulo %}
+
+<h1> Resultado de la busqueda</h1>
+
+{% endblock %}
+
+{% block contenidoquecambia %}
+
+
+
+{% if ingenieros %}
+
+<h1> buscando al ingeniero : {{nombre}} </h1>
+<ul>
+{% for ingeniero in ingenieros %}
+    <li>{{ingeniero.nombre}}
+    <li>{{ingeniero.apellido}}
+    <br>
+{% endfor %}
+</ul>
+{% else %}
+
+<p style="color:red"> {{respuesta}} </p>
+{% endif %}
+
+
+
+{% endblock %}

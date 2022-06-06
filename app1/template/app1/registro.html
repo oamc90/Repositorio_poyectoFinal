@@ -1,0 +1,17 @@
+{% extends "app1/master.html" %}
+
+{% load static %}
+
+{% block titulo %}
+
+<h2>Ingrese sus datos para el registro</h2>
+
+<form  method="POST">{% csrf_token %}
+
+      {{formulario.as_p}}
+
+     <input type="submit" value="Registar usuario">
+</form>
+
+
+{% endblock %}
